@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="ticketservice" default="main-ticketservice" basedir=".">
+	<description>
+		Ticket Service
+	</description>
+
+
+	
+	<property name="src" location="${basedir}/src/main/java" />
+	<property name="src-test" location="${basedir}/src/test/java" />
+	<property name="build" location="${basedir}/target" />
+	<property name="lib" value="${basedir}/src/main/lib" />
+	<property name="lib-test" value="${basedir}/src/test/lib" />
+	<property name="config" location="${basedir}/src/main/resources" />
+	<property name="dist" location="${basedir}/dist" />
+	<property name="test.results.dir" location="${basedir}/test-results" />
+	
+	<target name="init" depends="clean">
+		<!-- Create the time stamp -->
+		<tstamp />
+
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${dist}" />
+		<mkdir dir="${build}" />
+		<mkdir dir="${build}/lib" />
+		<mkdir dir="${build}/classes" />
+		<mkdir dir="${build}/classes-test" />
+		<mkdir dir="${build}/config" />
+		<mkdir dir="${test.results.dir}" />
+	</target>
+
+	<path id="service.compile.class.path">
+		<fileset dir="${lib}" />
+	</path>
+	
+	<path id="service.compile.class.test.path">
+			<fileset dir="${lib-test}" />
+			<fileset dir="${build}/lib" />
+	</path>
+	<path id="service.test.path">
+				<fileset dir="${lib-test}" />
+				<fileset dir="${build}/lib" />
+			<pathelement location="${build}/classes-test" />
+		<pathelement location="${config}" />
+	</path>
+
+
+	<target name="compile" depends="init" description="compile the source ">
+		<echo message="TASK: Compile" />
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" debug="true" destdir="${build}/classes" classpathref="service.compile.class.path" />
+	</target>
+	<target name="compile-tests" depends="init,compile" description="compile the test source ">
+			<echo message="TASK: Compile tests" />
+			<!-- Compile the java code from ${src} into ${build} -->
+			<javac srcdir="${src-test}" debug="true" destdir="${build}/classes-test" classpathref="service.compile.class.test.path" />
+		</target>
+	<target name="package" description="package the necessary components together">
+		<echo message="TASK: Package" />
+		<copy todir="${build}/lib" flatten="true">
+			<fileset dir="${lib}"  />
+		</copy>
+		<copy todir="${build}/config" flatten="true">
+					<fileset dir="${config}"  />
+		</copy>
+	</target>
+
+	<target name="main-ticketservice" depends="compile,package" description="Create Jar">
+		<jar jarfile="${build}/lib/ticketservice.jar" basedir="${build}/classes" />
+	</target>
+	<target name="run-ticketservice-tests" depends="clean,compile,package,main-ticketservice,compile-tests" description="Run tests">
+		 <junit printsummary="yes" haltonfailure="no" >
+		                        <classpath refid="service.test.path" />
+
+		  <test name="app.TicketServiceAppTest" fork="yes" todir="${test.results.dir}" >
+		  	<formatter type="plain" />
+		  	<formatter type="xml" />
+		  	</test>
+		 </junit>
+	</target>
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}" />
+	    <delete dir="${dist}" />
+	</target>
+</project>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="RES1PARAS-M1" name="app.TicketServiceAppTest" tests="1" time="50.287" timestamp="2015-11-01T04:11:35">
+  <properties>
+    <property name="java.vendor" value="Apple Inc." />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="jikes.class.path" value=":/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/alt-rt.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/alt-string.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/charsets.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/dt.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/jce.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/jconsole.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/jsse.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/management-agent.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/ui.jar" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="dist" value="/Users/apallavi/learn/TicketService/dist" />
+    <property name="lib" value="/Users/apallavi/learn/TicketService/src/main/lib" />
+    <property name="lib-test" value="/Users/apallavi/learn/TicketService/src/test/lib" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar" />
+    <property name="TODAY" value="November 1 2015" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.home" value="/tools/apache-ant-1.7.1" />
+    <property name="java.runtime.version" value="1.6.0_65-b14-466.1-11M4716" />
+    <property name="user.name" value="apallavi" />
+    <property name="awt.nativeDoubleBuffering" value="true" />
+    <property name="user.language" value="en" />
+    <property name="build" value="/Users/apallavi/learn/TicketService/target" />
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries" />
+    <property name="ant.project.name" value="ticketservice" />
+    <property name="DSTAMP" value="20151101" />
+    <property name="java.version" value="1.6.0_65" />
+    <property name="user.timezone" value="" />
+    <property name="ant.file.ticketservice" value="/Users/apallavi/learn/TicketService/build.xml" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="MacRoman" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="src" value="/Users/apallavi/learn/TicketService/src/main/java" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/Users/apallavi/learn/TicketService/build.xml" />
+    <property name="os.version" value="10.9.5" />
+    <property name="path.separator" value=":" />
+    <property name="test.results.dir" value="/Users/apallavi/learn/TicketService/test-results" />
+    <property name="java.vm.version" value="20.65-b04-466.1" />
+    <property name="ant.library.dir" value="/tools/apache-ant-1.7.1/lib" />
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="apple.awt.CToolkit" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="user.home" value="/Users/apallavi" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="config" value="/Users/apallavi/learn/TicketService/src/main/resources" />
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="java.vendor.url" value="http://www.apple.com/" />
+    <property name="java.vm.vendor" value="Apple Inc." />
+    <property name="gopherProxySet" value="false" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner app.TicketServiceAppTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter,/Users/apallavi/learn/TicketService/test-results/TEST-app.TicketServiceAppTest.txt formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/apallavi/learn/TicketService/test-results/TEST-app.TicketServiceAppTest.xml crashfile=/Users/apallavi/learn/TicketService/junitvmwatcher319693936273690568.properties propsfile=/Users/apallavi/learn/TicketService/junit3304425508064371115.properties" />
+    <property name="java.class.path" value="/Users/apallavi/learn/TicketService/src/test/lib/commons-logging-1.1.1.jar:/Users/apallavi/learn/TicketService/src/test/lib/junit-4.8.1.jar:/Users/apallavi/learn/TicketService/src/test/lib/mockito-core-1.8.0.jar:/Users/apallavi/learn/TicketService/src/test/lib/org.springframework.test-3.0.1.RELEASE.jar:/Users/apallavi/learn/TicketService/src/test/lib/spring-asm-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/src/test/lib/spring-beans-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/src/test/lib/spring-context-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/src/test/lib/spring-core-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/src/test/lib/spring-expression-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/target/lib/commons-logging-1.1.1.jar:/Users/apallavi/learn/TicketService/target/lib/spring-asm-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/target/lib/spring-beans-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/target/lib/spring-context-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/target/lib/spring-core-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/target/lib/spring-expression-3.0.5.RELEASE.jar:/Users/apallavi/learn/TicketService/target/lib/ticketservice.jar:/Users/apallavi/learn/TicketService/target/classes-test:/Users/apallavi/learn/TicketService/src/main/resources:/tools/apache-ant-1.7.1/lib/ant-launcher.jar:/tools/apache-ant-1.7.1/lib/ant.jar:/tools/apache-ant-1.7.1/lib/ant-junit.jar" />
+    <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
+    <property name="TSTAMP" value="0011" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.io.tmpdir" value="/var/folders/2n/1_3r9b9s6_q99vkf_qnwhr4m_m58g1/T/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/" />
+    <property name="mrj.build" value="11M4716" />
+    <property name="os.arch" value="x86_64" />
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment" />
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext" />
+    <property name="mrj.version" value="1070.1.6.0_65-466.1" />
+    <property name="user.dir" value="/Users/apallavi/learn/TicketService" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/Users/apallavi/learn/TicketService" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="/tools/apache-ant-1.7.1/lib/ant.jar" />
+    <property name="file.encoding" value="MacRoman" />
+    <property name="src-test" value="/Users/apallavi/learn/TicketService/src/test/java" />
+    <property name="java.specification.version" value="1.6" />
+  </properties>
+  <testcase classname="app.TicketServiceAppTest" name="multiThreadedBooking" time="50.072" />
+  <system-out><![CDATA[Number of seats at level 1:  12
+
+test1@yahoo.com reviewing options 10 sec
+test2@yahoo.com reviewing options 7 sec
+test3@yahoo.com reviewing options 12 sec
+test4@yahoo.com reviewing options 8 sec
+Number of seats at level 1:  12
+
+test5@yahoo.com reviewing options 10 sec
+Booking order  for-->test2@yahoo.com Number of Seats: 2 startLevel : 1
+Each level==>1 level list: [[Seat [levelId=1, rowId=1, seatNumber=1, available=true], Seat [levelId=1, rowId=1, seatNumber=2, available=true], Seat [levelId=1, rowId=1, seatNumber=3, available=true], Seat [levelId=1, rowId=1, seatNumber=4, available=true]], [Seat [levelId=1, rowId=2, seatNumber=1, available=true], Seat [levelId=1, rowId=2, seatNumber=2, available=true], Seat [levelId=1, rowId=2, seatNumber=3, available=true], Seat [levelId=1, rowId=2, seatNumber=4, available=true]], [Seat [levelId=1, rowId=3, seatNumber=1, available=true], Seat [levelId=1, rowId=3, seatNumber=2, available=true], Seat [levelId=1, rowId=3, seatNumber=3, available=true], Seat [levelId=1, rowId=3, seatNumber=4, available=true]]]
+Putting Hold for :  Customer: test2@yahoo.com hold ID: -1876441606302586335, seats=[Seat [levelId=1, rowId=1, seatNumber=1, available=false], Seat [levelId=1, rowId=1, seatNumber=2, available=false]]]
+
+test2@yahoo.com waiting to confirm 7 sec
+Booking order  for-->test4@yahoo.com Number of Seats: 4 startLevel : 1
+Each level==>1 level list: [[Seat [levelId=1, rowId=1, seatNumber=1, available=false], Seat [levelId=1, rowId=1, seatNumber=2, available=false], Seat [levelId=1, rowId=1, seatNumber=3, available=true], Seat [levelId=1, rowId=1, seatNumber=4, available=true]], [Seat [levelId=1, rowId=2, seatNumber=1, available=true], Seat [levelId=1, rowId=2, seatNumber=2, available=true], Seat [levelId=1, rowId=2, seatNumber=3, available=true], Seat [levelId=1, rowId=2, seatNumber=4, available=true]], [Seat [levelId=1, rowId=3, seatNumber=1, available=true], Seat [levelId=1, rowId=3, seatNumber=2, available=true], Seat [levelId=1, rowId=3, seatNumber=3, available=true], Seat [levelId=1, rowId=3, seatNumber=4, available=true]]]
+Putting Hold for :  Customer: test4@yahoo.com hold ID: -5914102777343714623, seats=[Seat [levelId=1, rowId=1, seatNumber=3, available=false], Seat [levelId=1, rowId=1, seatNumber=4, available=false], Seat [levelId=1, rowId=2, seatNumber=1, available=false], Seat [levelId=1, rowId=2, seatNumber=2, available=false]]]
+
+test4@yahoo.com waiting to confirm 8 sec
+Booking order  for-->test1@yahoo.com Number of Seats: 6 startLevel : 1
+Booking order  for-->test5@yahoo.com Number of Seats: 4 startLevel : 1
+Each level==>1 level list: [[Seat [levelId=1, rowId=1, seatNumber=1, available=false], Seat [levelId=1, rowId=1, seatNumber=2, available=false], Seat [levelId=1, rowId=1, seatNumber=3, available=false], Seat [levelId=1, rowId=1, seatNumber=4, available=false]], [Seat [levelId=1, rowId=2, seatNumber=1, available=false], Seat [levelId=1, rowId=2, seatNumber=2, available=false], Seat [levelId=1, rowId=2, seatNumber=3, available=true], Seat [levelId=1, rowId=2, seatNumber=4, available=true]], [Seat [levelId=1, rowId=3, seatNumber=1, available=true], Seat [levelId=1, rowId=3, seatNumber=2, available=true], Seat [levelId=1, rowId=3, seatNumber=3, available=true], Seat [levelId=1, rowId=3, seatNumber=4, available=true]]]
+Each level==>1 level list: [[Seat [levelId=1, rowId=1, seatNumber=1, available=false], Seat [levelId=1, rowId=1, seatNumber=2, available=false], Seat [levelId=1, rowId=1, seatNumber=3, available=false], Seat [levelId=1, rowId=1, seatNumber=4, available=false]], [Seat [levelId=1, rowId=2, seatNumber=1, available=false], Seat [levelId=1, rowId=2, seatNumber=2, available=false], Seat [levelId=1, rowId=2, seatNumber=3, available=true], Seat [levelId=1, rowId=2, seatNumber=4, available=true]], [Seat [levelId=1, rowId=3, seatNumber=1, available=true], Seat [levelId=1, rowId=3, seatNumber=2, available=true], Seat [levelId=1, rowId=3, seatNumber=3, available=true], Seat [levelId=1, rowId=3, seatNumber=4, available=true]]]
+Last level 1 Moving to next level 1
+Putting Hold for :  Customer: test1@yahoo.com hold ID: 6092199111004375105, seats=[Seat [levelId=1, rowId=2, seatNumber=3, available=false], Seat [levelId=1, rowId=2, seatNumber=4, available=false], Seat [levelId=1, rowId=3, seatNumber=1, available=false], Seat [levelId=1, rowId=3, seatNumber=2, available=false], Seat [levelId=1, rowId=3, seatNumber=3, available=false], Seat [levelId=1, rowId=3, seatNumber=4, available=false]]]
+
+test1@yahoo.com waiting to confirm 10 sec
+Each level==>2 level list: [[Seat [levelId=2, rowId=1, seatNumber=1, available=true], Seat [levelId=2, rowId=1, seatNumber=2, available=true], Seat [levelId=2, rowId=1, seatNumber=3, available=true], Seat [levelId=2, rowId=1, seatNumber=4, available=true], Seat [levelId=2, rowId=1, seatNumber=5, available=true]], [Seat [levelId=2, rowId=2, seatNumber=1, available=true], Seat [levelId=2, rowId=2, seatNumber=2, available=true], Seat [levelId=2, rowId=2, seatNumber=3, available=true], Seat [levelId=2, rowId=2, seatNumber=4, available=true], Seat [levelId=2, rowId=2, seatNumber=5, available=true]], [Seat [levelId=2, rowId=3, seatNumber=1, available=true], Seat [levelId=2, rowId=3, seatNumber=2, available=true], Seat [levelId=2, rowId=3, seatNumber=3, available=true], Seat [levelId=2, rowId=3, seatNumber=4, available=true], Seat [levelId=2, rowId=3, seatNumber=5, available=true]], [Seat [levelId=2, rowId=4, seatNumber=1, available=true], Seat [levelId=2, rowId=4, seatNumber=2, available=true], Seat [levelId=2, rowId=4, seatNumber=3, available=true], Seat [levelId=2, rowId=4, seatNumber=4, available=true], Seat [levelId=2, rowId=4, seatNumber=5, available=true]], [Seat [levelId=2, rowId=5, seatNumber=1, available=true], Seat [levelId=2, rowId=5, seatNumber=2, available=true], Seat [levelId=2, rowId=5, seatNumber=3, available=true], Seat [levelId=2, rowId=5, seatNumber=4, available=true], Seat [levelId=2, rowId=5, seatNumber=5, available=true]]]
+Putting Hold for :  Customer: test5@yahoo.com hold ID: 1282390508242594953, seats=[Seat [levelId=2, rowId=1, seatNumber=1, available=false], Seat [levelId=2, rowId=1, seatNumber=2, available=false], Seat [levelId=2, rowId=1, seatNumber=3, available=false], Seat [levelId=2, rowId=1, seatNumber=4, available=false]]]
+
+test5@yahoo.com waiting to confirm 10 sec
+Booking order  for-->test3@yahoo.com Number of Seats: 4 startLevel : 1
+Each level==>1 level list: [[Seat [levelId=1, rowId=1, seatNumber=1, available=false], Seat [levelId=1, rowId=1, seatNumber=2, available=false], Seat [levelId=1, rowId=1, seatNumber=3, available=false], Seat [levelId=1, rowId=1, seatNumber=4, available=false]], [Seat [levelId=1, rowId=2, seatNumber=1, available=false], Seat [levelId=1, rowId=2, seatNumber=2, available=false], Seat [levelId=1, rowId=2, seatNumber=3, available=false], Seat [levelId=1, rowId=2, seatNumber=4, available=false]], [Seat [levelId=1, rowId=3, seatNumber=1, available=false], Seat [levelId=1, rowId=3, seatNumber=2, available=false], Seat [levelId=1, rowId=3, seatNumber=3, available=false], Seat [levelId=1, rowId=3, seatNumber=4, available=false]]]
+Last level 1 Moving to next level 1
+Each level==>2 level list: [[Seat [levelId=2, rowId=1, seatNumber=1, available=false], Seat [levelId=2, rowId=1, seatNumber=2, available=false], Seat [levelId=2, rowId=1, seatNumber=3, available=false], Seat [levelId=2, rowId=1, seatNumber=4, available=false], Seat [levelId=2, rowId=1, seatNumber=5, available=true]], [Seat [levelId=2, rowId=2, seatNumber=1, available=true], Seat [levelId=2, rowId=2, seatNumber=2, available=true], Seat [levelId=2, rowId=2, seatNumber=3, available=true], Seat [levelId=2, rowId=2, seatNumber=4, available=true], Seat [levelId=2, rowId=2, seatNumber=5, available=true]], [Seat [levelId=2, rowId=3, seatNumber=1, available=true], Seat [levelId=2, rowId=3, seatNumber=2, available=true], Seat [levelId=2, rowId=3, seatNumber=3, available=true], Seat [levelId=2, rowId=3, seatNumber=4, available=true], Seat [levelId=2, rowId=3, seatNumber=5, available=true]], [Seat [levelId=2, rowId=4, seatNumber=1, available=true], Seat [levelId=2, rowId=4, seatNumber=2, available=true], Seat [levelId=2, rowId=4, seatNumber=3, available=true], Seat [levelId=2, rowId=4, seatNumber=4, available=true], Seat [levelId=2, rowId=4, seatNumber=5, available=true]], [Seat [levelId=2, rowId=5, seatNumber=1, available=true], Seat [levelId=2, rowId=5, seatNumber=2, available=true], Seat [levelId=2, rowId=5, seatNumber=3, available=true], Seat [levelId=2, rowId=5, seatNumber=4, available=true], Seat [levelId=2, rowId=5, seatNumber=5, available=true]]]
+Putting Hold for :  Customer: test3@yahoo.com hold ID: -8416963879452052151, seats=[Seat [levelId=2, rowId=1, seatNumber=5, available=false], Seat [levelId=2, rowId=2, seatNumber=1, available=false], Seat [levelId=2, rowId=2, seatNumber=2, available=false], Seat [levelId=2, rowId=2, seatNumber=3, available=false]]]
+
+test3@yahoo.com waiting to confirm 12 sec
+Reserve seats : test2@yahoo.comconfirm-1876441606302586335
+
+Reserve seats : test4@yahoo.comconfirm-5914102777343714623
+
+Remove from Hold:   Customer: test5@yahoo.com hold ID: 1282390508242594953, seats=[Seat [levelId=2, rowId=1, seatNumber=1, available=true], Seat [levelId=2, rowId=1, seatNumber=2, available=true], Seat [levelId=2, rowId=1, seatNumber=3, available=true], Seat [levelId=2, rowId=1, seatNumber=4, available=true]]]
+Remove from Hold:   Customer: test1@yahoo.com hold ID: 6092199111004375105, seats=[Seat [levelId=1, rowId=2, seatNumber=3, available=true], Seat [levelId=1, rowId=2, seatNumber=4, available=true], Seat [levelId=1, rowId=3, seatNumber=1, available=true], Seat [levelId=1, rowId=3, seatNumber=2, available=true], Seat [levelId=1, rowId=3, seatNumber=3, available=true], Seat [levelId=1, rowId=3, seatNumber=4, available=true]]]
+Reserve seats : test1@yahoo.comBooking expired: 6092199111004375105
+
+Reserve seats : test5@yahoo.comBooking expired: 1282390508242594953
+
+Remove from Hold:   Customer: test3@yahoo.com hold ID: -8416963879452052151, seats=[Seat [levelId=2, rowId=1, seatNumber=5, available=true], Seat [levelId=2, rowId=2, seatNumber=1, available=true], Seat [levelId=2, rowId=2, seatNumber=2, available=true], Seat [levelId=2, rowId=2, seatNumber=3, available=true]]]
+Reserve seats : test3@yahoo.comBooking expired: -8416963879452052151
+
+No booking to retrieve 
+Retrieve Booking for :  test1@yahoo.comnull
+Hold Id: -1876441606302586335
+Retrieving booking:  Customer: test2@yahoo.com hold ID: -1876441606302586335, seats=[Seat [levelId=1, rowId=1, seatNumber=1, available=false], Seat [levelId=1, rowId=1, seatNumber=2, available=false]]]
+
+Retrieve Booking for :  test2@yahoo.com Customer: test2@yahoo.com hold ID: -1876441606302586335, seats=[Seat [levelId=1, rowId=1, seatNumber=1, available=false], Seat [levelId=1, rowId=1, seatNumber=2, available=false]]]
+No booking to retrieve 
+Retrieve Booking for :  test3@yahoo.comnull
+Hold Id: -5914102777343714623
+Retrieving booking:  Customer: test4@yahoo.com hold ID: -5914102777343714623, seats=[Seat [levelId=1, rowId=1, seatNumber=3, available=false], Seat [levelId=1, rowId=1, seatNumber=4, available=false], Seat [levelId=1, rowId=2, seatNumber=1, available=false], Seat [levelId=1, rowId=2, seatNumber=2, available=false]]]
+
+Retrieve Booking for :  test4@yahoo.com Customer: test4@yahoo.com hold ID: -5914102777343714623, seats=[Seat [levelId=1, rowId=1, seatNumber=3, available=false], Seat [levelId=1, rowId=1, seatNumber=4, available=false], Seat [levelId=1, rowId=2, seatNumber=1, available=false], Seat [levelId=1, rowId=2, seatNumber=2, available=false]]]
+No booking to retrieve 
+Retrieve Booking for :  test5@yahoo.comnull
+HoldId: -1876441606302586335 Is donetrue
+HoldId: -5914102777343714623 Is donetrue
+HoldId: -8416963879452052151 Is donetrue
+HoldId: 1282390508242594953 Is donetrue
+HoldId: 6092199111004375105 Is donetrue
+@After - classTearDown
+]]></system-out>
+  <system-err><![CDATA[Nov 1, 2015 12:11:35 AM org.springframework.test.context.TestContextManager retrieveTestExecutionListeners
+INFO: @TestExecutionListeners is not present for class [class app.TicketServiceAppTest]: using defaults.
+Nov 1, 2015 12:11:35 AM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@56d73c7a: startup date [Sun Nov 01 00:11:35 EDT 2015]; root of context hierarchy
+Nov 1, 2015 12:11:35 AM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [ticketServiceBean.xml]
+Nov 1, 2015 12:11:35 AM org.springframework.core.io.support.PropertiesLoaderSupport loadProperties
+INFO: Loading properties file from class path resource [ticketService.config]
+Nov 1, 2015 12:11:35 AM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@75be16f5: defining beans [propertyConfigurer,ticketService,dataService]; root of factory hierarchy
+Nov 1, 2015 12:11:35 AM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [ticketServiceBean.xml]
+Nov 1, 2015 12:11:35 AM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.support.GenericApplicationContext@28b301f2: startup date [Sun Nov 01 00:11:35 EDT 2015]; root of context hierarchy
+Nov 1, 2015 12:11:35 AM org.springframework.core.io.support.PropertiesLoaderSupport loadProperties
+INFO: Loading properties file from class path resource [ticketService.config]
+Nov 1, 2015 12:11:35 AM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@19c5466b: defining beans [propertyConfigurer,ticketService,dataService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor]; root of factory hierarchy
+]]></system-err>
+</testsuite>
