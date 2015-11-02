@@ -1,7 +1,14 @@
 package com.ticketservice.bo;
 
 import java.util.List;
-
+/**
+ * 
+ * Class that hold information about the list of seats held as a part of a booking. It contains customers emails and hold id associated with the reservation
+ * Class also contains a unblock method to unblock the seats that it contains.
+ * 
+ * @author apallavi
+ *
+ */
 public class SeatHold {
 	private long holdId;
 	String customerEmail;

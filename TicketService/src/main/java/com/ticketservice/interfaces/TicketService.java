@@ -41,6 +41,6 @@ public interface TicketService {
 	 * @param confirmId
 	 * @return
 	 */
-	SeatHold retreiveFinalBooking(String confirmId);
+	String retreiveFinalBooking(String confirmId);
 
 }

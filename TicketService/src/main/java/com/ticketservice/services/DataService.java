@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -16,8 +15,11 @@ import com.ticketservice.bo.SeatHold;
 
 /**
  * Basic service to create data model of Levels and seat Map. In a real life
- * system this will be implemented by a DB process that writes and retrives from
- * a DB. The seat Map will be a DB table , Level would be another table.
+ * this will be implemented by a DB process that writes and retrieves from
+ * a Database. The seat Map will be a DB table .
+ * 
+ * This class is the main class that executes various actions on the SeatMap.
+ * It allows the seats to be put on hold for a customer, reserve seats and to remove seat hold after reservation time expires.
  * 
  * 
  * @author apallavi
@@ -31,9 +33,7 @@ public class DataService {
 	private static List<Level> venueLevels = new ArrayList<Level>();
 	private Map<Long, ScheduledFuture<?>> futureMap = new HashMap<Long, ScheduledFuture<?>>();
 	private Map<Long, SeatHold> seatHeld = new HashMap<Long, SeatHold>();
-	private Map<String, SeatHold> seatBooked = new HashMap<String, SeatHold>();
 	private String levels;
-	private static Random rand = new Random(10000);
 
 	public DataService(String levels) {
 		this.levels = levels;
@@ -93,7 +93,8 @@ public class DataService {
 			}// end NumberSeat
 			seatMap.put(level.getLevelId(), levelList);
 		}// end Level
-			// System.out.println("Initialized seatMap==>" + seatMap.size());
+			//System.out.println("Initialized seatMap==>" + seatMap);
+			//System.out.println("");
 
 	}// end Init
 
@@ -138,82 +139,92 @@ public class DataService {
 		List<Seat> heldSeats = new ArrayList<Seat>();
 		seatHold.setSeats(heldSeats);
 		seatHold.setCustomerEmail(customerEmail);
+		seatHold.setHoldId(Long.valueOf(System.currentTimeMillis() + (int)(500000* Math.random())));
 		
-		seatHold.setHoldId(Long.valueOf(System.currentTimeMillis()*rand.nextInt()+1));
+		// From Min to max level speciied, search for available seats
 		if (minLevel != null && maxLevel != null) {
 			outer : while (maxLevel > minLevel) {
 				List<List<Seat>> levelList = seatMap.get(minLevel);
-				 System.out.println("Each level==>" + minLevel +  " level list: " + levelList);
+			   // System.out.println("Each level==>" + minLevel +  " level list: " + levelList);
 				for (List<Seat> eachRow : levelList) {
 					for (Seat eachSeat : eachRow) {
 						eachSeat.selectSeatIfAvailable(heldSeats);
+						// If  number of seats that we want to be held has reached then no need to search.
 						if (heldSeats.size() >= numSeats) {
 							break outer;
 						}
 					}
 				}
-				System.out
-				.println("Last level " + minLevel + " Moving to next level " + minLevel++ );
+				//System.out.println("Last level " + minLevel + " Moving to next level " + ++minLevel );
 			}
 		}
 
+		// Put the seathold's unblock in a runnable such that the seathold can be expired in a configurable time duration.
 		Runnable unblockTask = new Runnable() {
 			public void run() {
 				seatHeld.remove(seatHold.getHoldId());
 				seatHold.unblock();
 			}
 		};
-
+        // Pass runnable to a executor with a configurable delay.
 		ScheduledFuture<?> future = executor.schedule(unblockTask,
 				reservationHoldTimeInSec, TimeUnit.SECONDS);
+		
+		// A map to indicate which seat hold are to be expired
 		futureMap.put(seatHold.getHoldId(), future);
 		seatHeld.put(seatHold.getHoldId(), (seatHold));
 		return seatHold;
 
 	}
-
+	/**
+	 * Method to reserve seats
+	 * 
+	 * 
+	 * @param seatHoldId
+	 * @param customerEmail
+	 * @return
+	 */
 	public String reserveSeats(long seatHoldId, String customerEmail) {
+		
+		//When a confirmation order comes, the corresponding unblock future task is cleared.
 		ScheduledFuture<?> future = futureMap.get(seatHoldId);
 		future.cancel(true);
 		SeatHold seatheld = seatHeld.get(seatHoldId);
 		String confirmationString = "";
+		// Confirmation code is generated.
 		if (seatheld != null) {
 			confirmationString = "confirm" + seatHoldId;
-			seatBooked.put(confirmationString, seatheld);
 		} else {
-			confirmationString = "Booking expired: " + seatHoldId;
+			confirmationString = " Booking expired: " + seatHoldId;
 		}
 		return confirmationString;
 	}
 
 	public void shutDown() {
-		for (Map.Entry<Long, ScheduledFuture<?>> eachEntry : futureMap
-				.entrySet()) {
-			System.out.println("HoldId: " + eachEntry.getKey() + " Is done"
-					+ eachEntry.getValue().isDone());
-		}
-
 		executor.shutdownNow();
 
 	}
-
-	public SeatHold retreiveFinalBooking(String confirmId) {
-		SeatHold seathold = null;
-		if (confirmId.contains("confirm")) {
+	/**
+	 * 
+	 * Method retrieves the booking based in ConfirmId.
+	 * 
+	 * @param confirmId
+	 */
+	public String retreiveFinalBooking(String confirmId) {
+		String bookingInfo= "";
+		
+		if (confirmId!=null && confirmId.contains("confirm")) {
 			String holdId = confirmId.replaceAll("confirm", "");
-			System.out.println("Hold Id: " + holdId);
-			seathold = seatHeld.get(Long.valueOf(holdId));
-			System.out.println("Retrieving booking: " + seathold);
-			System.out.println("");
+			SeatHold seathold = seatHeld.get(Long.valueOf(holdId));
+			bookingInfo = seathold.toString();
+			
 		} else {
-			System.out.println("No booking to retrieve ");
+			bookingInfo =" No booking to retrieve "  ;
 		}
-
-		return seathold;
+		return bookingInfo;
 	}
 
 	public void finalState() {
-		System.out.println("seatBooked" + seatBooked);
 		System.out.println("seatHeld" + seatHeld);
 		System.out.println("");
 	}

@@ -2,6 +2,13 @@ package com.ticketservice.bo;
 
 import java.util.List;
 
+/**
+ * Class that hold information about each Seat. 
+ * Class has a synchronized method that checks the availabilty of that instance and sets itself as unavailable.
+ * 
+ * @author apallavi
+ *
+ */
 public class Seat {
  private int levelId;
  private int rowId;
@@ -24,6 +31,8 @@ public void setSeatNumber(int seatNumber) {
 public boolean isAvailable() {
 	return available;
 }
+
+// This method is synchronized so two threads cannot hold same set of seats.
 public synchronized void selectSeatIfAvailable(List<Seat> heldSeats) {
 	if (this.isAvailable()){
 		heldSeats.add(this);

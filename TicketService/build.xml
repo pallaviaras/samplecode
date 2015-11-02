@@ -70,7 +70,8 @@
 		<jar jarfile="${build}/lib/ticketservice.jar" basedir="${build}/classes" />
 	</target>
 	<target name="run-ticketservice-tests" depends="clean,compile,package,main-ticketservice,compile-tests" description="Run tests">
-		 <junit printsummary="yes" haltonfailure="no" >
+<echo>Test executes for minute. Results are in test-result directory</echo>		 
+<junit printsummary="yes" haltonfailure="no" >
 		                        <classpath refid="service.test.path" />
 
 		  <test name="app.TicketServiceAppTest" fork="yes" todir="${test.results.dir}" >

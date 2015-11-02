@@ -17,6 +17,6 @@
 	
 	<bean id="dataService" class=" com.ticketservice.services.DataService" >
 	<constructor-arg  value="${level.data}" />
-	<property name="reservationHoldTimeInSec" value="8" />
+	<property name="reservationHoldTimeInSec" value="${hold.duration}" />
 	</bean>	
 </beans>

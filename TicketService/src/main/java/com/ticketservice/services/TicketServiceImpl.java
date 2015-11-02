@@ -2,7 +2,13 @@ package com.ticketservice.services;
 
 import com.ticketservice.bo.SeatHold;
 import com.ticketservice.interfaces.TicketService;
-
+/**
+ * This Clas, implements the methods of Ticket service.
+ * This class delegates the call to the undelying dataservice class that is dependency injected.
+ * 
+ * @author apallavi
+ *
+ */
 public class TicketServiceImpl implements TicketService{ 
 	
 	private DataService dataService ;
@@ -44,7 +50,11 @@ public class TicketServiceImpl implements TicketService{
 		 return dataService.reserveSeats(seatHoldId,customerEmail);
 	}
 	
-	public SeatHold retreiveFinalBooking(String confirmId){
+	/**
+	 * Displays seathold object for customer
+	 * 
+	 */
+	public String retreiveFinalBooking(String confirmId){
 		return dataService.retreiveFinalBooking(confirmId);
 	}
 	public DataService getDataService() {
